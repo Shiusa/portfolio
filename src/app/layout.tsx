@@ -34,9 +34,7 @@ export default function RootLayout({
         <Header />
         <div className="h-[96%] w-full flex columns-2">
           <div className="w-[10.5%]">
-            <MenuProvider>
-              <Navbar />
-            </MenuProvider>
+            <Navbar />
           </div>
           <main className="w-[89.5%]">
             {children}
