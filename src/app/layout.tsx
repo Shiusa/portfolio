@@ -32,11 +32,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-mauveNeonClair`}
       >
         <Header />
-        <div className="h-[96%] w-full flex columns-2">
-          <div className="w-[10.5%]">
+        <div className="h-[96%] w-full flex flex-col lg:flex-row columns-1 xl:columns-2">
+          <div className="xl:w-[10.5%] lg:w-1/5 w-full">
             <Navbar />
           </div>
-          <main className="w-[89.5%]">
+          <main className="xl:w-[89.5%] lg:w-4/5 w-full h-full">
             {children}
           </main>
         </div>
