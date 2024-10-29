@@ -21,14 +21,20 @@ const navData:NavData[] = [
       path: "/",
 	  isSubMenu: false
     },
+	{
+		id: 2,
+		name: "Profil",
+		path: "/profile",
+		isSubMenu: false
+	  },
     {
-      id: 2,
+      id: 3,
       name: "Compétence",
       path: "/skill",
 	  isSubMenu: false
     },
     {
-      id: 3,
+      id: 4,
       name: "Projets",
       path: "/projects",
 	  isSubMenu: true,
@@ -46,13 +52,13 @@ const navData:NavData[] = [
 	  ]
     },
     {
-      id: 4,
+      id: 5,
       name: "Contact",
       path: "/contact",
 	  isSubMenu: false
     },
     {
-      id: 5,
+      id: 6,
       name: "Public",
       path: "/public",
 	  isSubMenu: true,
