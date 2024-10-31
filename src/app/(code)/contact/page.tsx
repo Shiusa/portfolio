@@ -5,7 +5,7 @@ import React from 'react'
 const ContactPage = () => {
   return (
     <>
-      <MainChildrenWrapper>
+      <MainChildrenWrapper title='Contactez-moi'>
         <p>contactSide</p>
       </MainChildrenWrapper>
       <CodeChildrenWrapper>

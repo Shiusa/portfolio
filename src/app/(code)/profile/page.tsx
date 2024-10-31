@@ -43,10 +43,10 @@ export default ProfileCard
 
   return (
     <>
-      <MainChildrenWrapper>
-        <div className='flex flex-col items-center h-full w-full'>
-          <h1 className='pt-[12%] pb-[6%] w-full font-bold text-3xl text-center text-blancPur'>Apercu du Profil</h1>
-          <div className='h-[72%]'>
+      <MainChildrenWrapper title='Apercu du Profil'>
+        {/* <h1 className='pt-[12%] pb-[6%] w-full font-bold text-3xl text-center text-blancPur'>Apercu du Profil</h1> */}
+        <div className='max-w-[90%] h-[72%]'>
+          <div className='h-[100%] w-full'>
             <ProfileCard />
           </div>
         </div>

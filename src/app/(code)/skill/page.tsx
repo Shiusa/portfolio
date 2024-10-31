@@ -136,12 +136,10 @@ export default SkillCardList
 
   return (
     <>
-      <MainChildrenWrapper>
-        <div className='flex flex-col items-center h-full w-full'>
-          <h1 className='pt-[12%] pb-[6%] w-full font-bold text-3xl text-center text-blancPur'>Outils et technologies</h1>
-          <div className='w-full flex justify-center'>
-            <SkillCardList />
-          </div>
+      <MainChildrenWrapper title='Outils et technologies'>
+        {/* <h1 className='pt-[12%] pb-[6%] w-full font-bold text-3xl text-center text-blancPur'>Outils et technologies</h1> */}
+        <div className='w-full flex justify-center'>
+          <SkillCardList />
         </div>
       </MainChildrenWrapper>
       <CodeChildrenWrapper>
