@@ -1,12 +1,3 @@
-import CodeChildrenWrapper from '@/components/CodeChildrenWrapper'
-import MainChildrenWrapper from '@/components/MainChildrenWrapper'
-import PrismLoader from '@/components/PrismLoader'
-import React from 'react'
-import SkillCardList from './_component/SkillCardList'
-
-const SkillPage = () => {
-
-  const codeString = `
 import React from 'react'
 import SkillCard from './SkillCard'
 
@@ -132,27 +123,3 @@ const SkillCardList = () => {
 }
 
 export default SkillCardList
-  `
-
-  return (
-    <>
-      <MainChildrenWrapper>
-        <div className='flex flex-col items-center h-full w-full'>
-          <h1 className='pt-[12%] pb-[6%] w-full font-bold text-3xl text-center text-blancPur'>Outils et technologies</h1>
-          <div className='w-full flex justify-center'>
-            <SkillCardList />
-          </div>
-        </div>
-      </MainChildrenWrapper>
-      <CodeChildrenWrapper>
-
-        <PrismLoader>
-          {codeString}
-        </PrismLoader>
-
-      </CodeChildrenWrapper>
-    </>
-  )
-}
-
-export default SkillPage
