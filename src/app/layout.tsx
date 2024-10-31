@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import SocialBar from "@/components/SocialBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,14 +31,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-mauveNeonClair`}
       >
-        <Header />
-        <div className="h-[96%] w-full flex flex-col lg:flex-row columns-1 xl:columns-2">
-          <div className="xl:w-[10.5%] lg:w-1/5 w-full">
+        {/*h-[96%] w-full flex flex-col lg:flex-row columns-1 xl:columns-2*/}
+        <div className="h-full w-full flex flex-col lg:flex-row columns-1 xl:columns-2">
+          <div className="xl:w-[12%] lg:w-1/5 w-full h-full flex columns-2">
+            <div className="h-full w-[10%] lg:w-[30%] border-r-[1px] border-mauveNeonClair">
+              <SocialBar />
+            </div>
             <Navbar />
           </div>
-          <main className="xl:w-[89.5%] lg:w-4/5 w-full h-full">
-            {children}
-          </main>
+          {/*w-[90%]*/}
+          <div className="w-full">
+            <Header />
+            {/*xl:w-[89.5%] lg:w-4/5 w-full h-full*/}
+            <main className="xl:w-full lg:w-full w-full h-full">
+              {children}
+            </main>
+          </div>
         </div>
       </body>
     </html>
