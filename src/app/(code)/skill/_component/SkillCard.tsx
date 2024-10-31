@@ -20,7 +20,7 @@ const SkillCard = ({ skillData }: { skillData:Skill }) => {
         </div>
         <div className='text-blancPur w-full'>
             <div className='flex flex-col pt-[2%]'>
-                <h2 className='font-bold text-base'>{skillData.title}</h2>
+                <h2 className='font-bold text-base text-mauveNeon'>{skillData.title}</h2>
                 <p className='text-sm'>{skillData.subTitle}</p>
             </div>
         </div>
