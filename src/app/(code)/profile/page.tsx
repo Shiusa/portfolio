@@ -1,6 +1,6 @@
 import CodeChildrenWrapper from '@/components/CodeChildrenWrapper'
 import MainChildrenWrapper from '@/components/MainChildrenWrapper'
-import ProfileCard from '@/components/ProfileCard'
+import ProfileCard from '@/app/(code)/profile/_component/ProfileCard'
 import React from 'react'
 // import PrismCodeWrapper from '@/components/PrismCodeWrapper'
 import PrismLoader from '@/components/PrismLoader'
