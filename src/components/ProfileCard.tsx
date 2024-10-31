@@ -14,8 +14,10 @@ const ProfileCard = () => {
         </div>
         <div className='flex justify-center py-[8%] px-[4%] border-t-4 border-mauveNeon mt-[3.5%]'>
             <p className='text-bleuAcier text-base text-center'>
-            Student in computer sciences and I&apos;m looking for an internship.<br />
-            This portfolio is a side project in Next.JS
+            Etudiant informatique en 3ème année <br />
+            à la recherche d&apos;un stage<br />
+            de début février a mai pour 75 jours.<br />
+            Ce portfolio est un projet fait en Next JS.
             </p>
         </div>
         <div className='flex items-center justify-center gap-[2%] p-[1.5%]'>
