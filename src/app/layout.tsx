@@ -40,10 +40,10 @@ export default function RootLayout({
             <Navbar />
           </div>
           {/*w-[90%]*/}
-          <div className="w-full">
+          <div className="w-full h-screen overflow-hidden">
             <Header />
             {/*xl:w-[89.5%] lg:w-4/5 w-full h-full*/}
-            <main className="xl:w-full lg:w-full w-full h-full">
+            <main className="xl:w-full lg:w-full w-full h-full overflow-hidden">
               {children}
             </main>
           </div>
