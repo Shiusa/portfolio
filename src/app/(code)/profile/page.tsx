@@ -24,12 +24,12 @@ const ProfileCard = () => {
 
             </div>
         </div>
-        <div className='flex justify-center py-[8%] px-[4%] border-t-4 border-mauveNeon mt-[3.5%]'>
-            <p className='text-bleuAcier text-base text-center'>
+        <div className='flex justify-center py-[8%] px-[8%] border-t-4 border-mauveNeon mt-[3.5%]'>
+            <p className='text-bleuAcier text-base leading-tight text-center text-pretty'>
             Etudiant informatique en 3ème année
             à la recherche d&apos;un stage
-            de début février à mai pour 75 jours.<br /><br />
-            Ce portfolio est un projet fait en Next JS.
+            de début février à mai pour <br /><span className='underline underline-offset-4 text-bleuNeon font-bold text-lg'>75 jours</span>.<br /><br />
+            Ce portfolio est un projet fait en <br /><span className='underline underline-offset-8 px-[3%] py-[1.5%] bg-bleuAcier text-orTamise rounded-sm text-lg'>Next JS</span>.
             </p>
         </div>
         <div className='flex items-center justify-center gap-[2%] p-[1.5%]'>
