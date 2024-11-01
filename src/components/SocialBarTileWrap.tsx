@@ -5,7 +5,7 @@ const SocialBarTileWrap = ({ children, path }:{
   path:string;
 }) => {
   return (
-    <a href={path} target='_blank'>    
+    <a href={path} target='_blank' className='group'>    
       <li className="flex items-center justify-center p-2">
         {children}
       </li>
