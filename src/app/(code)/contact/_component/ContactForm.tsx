@@ -9,13 +9,14 @@ import { contactFormSchema } from '@/schemas/yupSchema'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import ErrorMessageWrapper from '@/components/ErrorMessageWrapper'
+import { handleContactForm } from '@/actions/contactFormAction'
 // import BlueBtn from '@/components/BlueBtn'
 
 type ContactFormType = InferType<typeof contactFormSchema>;
 
 const ContactForm = () => {
 
-    const {register, handleSubmit, formState:{errors}} = useForm<ContactFormType>({
+    const {register, handleSubmit, setError, formState:{errors, isSubmitting}} = useForm<ContactFormType>({
         resolver: yupResolver(contactFormSchema)
     })
 
@@ -28,12 +29,23 @@ const ContactForm = () => {
     //     }
     // })
 
-    const onSubmit = () => {
-        console.log("submit")
+    const onSubmit = async (data:ContactFormType) => {
+        // console.log("client data ", data)
+        // await new Promise(resolve => setTimeout(resolve,5000))
+        const response = await handleContactForm(data)
+        // if (response.status === "error" && response.message) {
+        //     Object.entries(response.message).forEach(([message]) => {
+        //       setError("root", { type: "server", message });
+        //     });
+        //   }
+        if (response.status === "error" && response.message) {
+            // Utiliser setError pour afficher tous les messages d'erreurs en une seule fois
+            setError("root", { type: response.type, message: response.message });
+        }
     }
 
     return (
-        <form onSubmit={handleSubmit(console.log)} className='flex flex-col gap-6 items-center'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-6 items-center'>
 
                 <ContactInputWrapper className='group' errorMessage={errors.name && errors.name.message}>
                     <label className='w-[8%]' htmlFor='name'>
@@ -64,7 +76,8 @@ const ContactForm = () => {
                 {errors.message && (<ErrorMessageWrapper message={errors.message.message}/>)}
             </div>
 
-            <button type='submit' className='bg-bleuNeon text-center p-[4%] text-grisAnthracite rounded-md min-w-30 w-40'>Envoyer</button>
+            {errors.root && (errors.root.type==="server" || errors.root.type==="yup") && (<ErrorMessageWrapper message={errors.root.message}/>)}
+            <button type='submit' className={`bg-bleuNeon text-center p-[4%] text-grisAnthracite rounded-md min-w-30 w-40`} disabled={isSubmitting}>{isSubmitting? "Envoi en cours": "Envoyer"}</button>
             {/* <BlueBtn path='/' innerName='Envoyer'/> */}
             {/* <input type="submit" /> */}
         </form>
