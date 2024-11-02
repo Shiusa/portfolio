@@ -17,7 +17,7 @@ export async function handleContactForm(data:ContactFormType) {
         // console.log("succes ", data)
 
         await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'stage@nguyen-kyle.fr',
             to: 'kylenguyen60@hotmail.com',
             subject: 'Message from portfolio',
             replyTo: data.mail,
