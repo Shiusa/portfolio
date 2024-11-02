@@ -1,13 +1,15 @@
 import React from 'react'
 
 type Params = Promise<{
-  slug: string
+  id: string
 }>
 
 const ProjectPage = async(props : { params: Params }) => {
-  const { slug } = await props.params;
+  
+  const { id } = await props.params;
+
   return (
-    <div>Project {slug}</div>
+    <div>Project {id}</div>
   )
 }
 
