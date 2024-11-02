@@ -1,7 +1,13 @@
 import React from 'react'
 
-const ProjectPage = async ({ params }:{ params: { id:number } }) => {
-  const { id } = await params;
+type ProjectPageProps = {
+  params: {
+    id: string;
+  }
+}
+
+const ProjectPage = ({ params }:ProjectPageProps) => {
+  const { id } = params;
   return (
     <div>Project {id}</div>
   )
