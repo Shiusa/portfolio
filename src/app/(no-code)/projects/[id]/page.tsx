@@ -1,15 +1,15 @@
 import React from 'react'
 
-type ProjectPageProps = {
-  params: {
-    id: string;
-  }
-}
+// type ProjectPageProps = {
+//   params: {
+//     slug: string;
+//   }
+// }
 
-const ProjectPage = ({ params }:ProjectPageProps) => {
-  const { id } = params;
+const ProjectPage = async(props : { params: { slug:string } }) => {
+  const { slug } = await props.params;
   return (
-    <div>Project {id}</div>
+    <div>Project {slug}</div>
   )
 }
 
