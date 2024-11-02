@@ -20,7 +20,7 @@ const NavbarTile = ({data}:{data:NavData}) => {
 	return (
 		<li>
 			<div className={`flex columns-2 h-8 text-base items-center ${isPathActive ? 'bg-mauveNeon':''}`}>
-				<div className="w-[20%]">
+				<div className="w-[20%] h-full flex items-center justify-center">
 					{data.isSubMenu? (
 						<Chevron isPathActive={isPathActive} toggleSubMenu={toggleSubMenu} />
 					):(
@@ -28,7 +28,7 @@ const NavbarTile = ({data}:{data:NavData}) => {
 						</div>
 					)}
 				</div>
-				<Link href={data.path} className={`${isPathActive ? 'text-bleuNeon':'text-orTamise'}`}>
+				<Link href={data.path} className={`w-[80%] h-full flex items-center ${isPathActive ? 'text-bleuNeon':'text-orTamise'}`}>
 					{data.name}
 				</Link>
 			</div>

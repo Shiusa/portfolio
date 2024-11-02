@@ -32,9 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-mauveNeonClair`}
       >
         {/*h-[96%] w-full flex flex-col lg:flex-row columns-1 xl:columns-2*/}
-        <div className="h-full w-full flex flex-col lg:flex-row columns-1 xl:columns-2">
-          <div className="xl:w-[12%] lg:w-1/5 w-full h-full flex columns-2">
-            <div className="h-full w-[10%] lg:w-[30%] border-r-[1px] border-mauveNeonClair">
+        <div className="h-full w-full flex flex-col lg:flex-row columns-1 md:columns-2">
+          <div className="lg:w-1/5 xl:w-[16%] 2xl:w-[14%] w-full h-full flex columns-2">
+            <div className="h-full w-[10%] lg:w-[26%] xl:w-[28%] 2xl:w-[30%] border-r-[1px] border-mauveNeonClair">
               <SocialBar />
             </div>
             <Navbar />
