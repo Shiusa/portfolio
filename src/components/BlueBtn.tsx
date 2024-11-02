@@ -1,9 +1,15 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { ComponentPropsWithoutRef } from 'react'
 
-const BlueBtn = ({ path, innerName, className }:{ path:string; innerName:string, className?:string; }) => {
+type BlueBtnPropsType = {
+  path: string;
+  innerName: string;
+  className?: string;
+} & ComponentPropsWithoutRef<"a">;
+
+const BlueBtn = ({ path, innerName, className, ...props }:BlueBtnPropsType) => {
   return (
-    <Link href={path} className={`bg-bleuNeon flex items-center justify-center px-[3%] py-[1%] text-center text-lg tracking-tight text-grisAnthracite rounded-md min-w-30 hover:bg-mauveNeon hover:text-gray-100 ${className}`}>
+    <Link href={path} className={`bg-bleuNeon flex items-center justify-center px-[3%] py-[1%] text-center text-lg tracking-tight text-grisAnthracite rounded-md min-w-30 hover:bg-mauveNeon hover:text-gray-100 ${className}`} {...props}>
         {innerName}
     </Link>
   )
