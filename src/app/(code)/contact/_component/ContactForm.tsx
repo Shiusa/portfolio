@@ -55,7 +55,7 @@ const ContactForm = () => {
                 <label className='w-[8%]' htmlFor='name'>
                     <UserIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon' />
                 </label>
-                <input {...register("name")} name='name' id='name' type="text" placeholder='Nom' className='placeholder-blancPur bg-transparent w-full text-orTamise focus:outline-none'/>
+                <input {...register("name")} name='name' id='name' type="text" placeholder='Nom' className='placeholder-gray-300 bg-transparent w-full text-orTamise focus:outline-none'/>
             </ContactInputWrapper>
 
 
@@ -63,7 +63,7 @@ const ContactForm = () => {
                 <label className='w-[8%]' htmlFor='email'>
                     <MailIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon' />
                 </label>
-                <input {...register("mail")} name='mail' id='mail' type="email" placeholder='Email' className='placeholder-blancPur bg-transparent w-full text-orTamise focus:outline-none'/>
+                <input {...register("mail")} name='mail' id='mail' type="email" placeholder='Email' className='placeholder-gray-300 bg-transparent w-full text-orTamise focus:outline-none'/>
             </ContactInputWrapper>
 
 
@@ -74,7 +74,7 @@ const ContactForm = () => {
                             <ChatBubbleIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon'/>
                         </div>
                     </label>
-                    <textarea {...register("message")} name="message" id="message" placeholder='Message' className='placeholder-blancPur bg-grisAnthracite py-[2%] px-[4%] rounded-lg w-full h-[100%] resize-none text-orTamise focus:outline-none scrollbar-hidden min-h-40'>
+                    <textarea {...register("message")} name="message" id="message" placeholder='Message' className='placeholder-gray-300 bg-grisAnthracite py-[2%] px-[4%] rounded-lg w-full h-[100%] resize-none text-orTamise focus:outline-none scrollbar-hidden min-h-40'>
                     </textarea>
                 </div>
                 {errors.message && (<ErrorMessageWrapper message={errors.message.message}/>)}
@@ -82,7 +82,7 @@ const ContactForm = () => {
 
             {errors.root && errors.root.type==="error" && (<ErrorMessageWrapper message={errors.root.message}/>)}
             {errors.root && errors.root.type==="success" && (<SuccessMessageWrapper message={errors.root.message}/>)}
-            <button type='submit' className={`bg-bleuNeon text-center flex justify-center items-center p-[4%] text-grisAnthracite rounded-md min-w-30 w-40 max-h-12`} disabled={isSubmitting}>{isSubmitting? "Envoi en cours": "Envoyer"}</button>
+            <button type='submit' className={`bg-bleuNeon hover:bg-mauveNeon text-center flex justify-center items-center p-[4%] text-grisAnthracite hover:text-gray-100 rounded-md min-w-30 w-40 max-h-12`} disabled={isSubmitting}>{isSubmitting? "Envoi en cours": "Envoyer"}</button>
             {/* <BlueBtn path='/' innerName='Envoyer'/> */}
             {/* <input type="submit" /> */}
         </form>
