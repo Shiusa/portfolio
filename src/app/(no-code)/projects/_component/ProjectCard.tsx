@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BlueBtn from '@/components/BlueBtn'
 import TechnoLabel from './TechnoLabel'
-import { ProjectType } from '../page'
+import { ProjectType } from '@/types/types'
 
 const ProjectCard = ({ projectData }:{ projectData:ProjectType}) => {
   return (

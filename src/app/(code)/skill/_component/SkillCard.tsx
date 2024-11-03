@@ -1,7 +1,7 @@
 // import GithubIcon from '@/icons/GithubIcon'
 import React from 'react'
-import { Skill } from './SkillCardList'
 import Image from 'next/image'
+import { Skill } from '@/types/types'
 
 const SkillCard = ({ skillData }: { skillData:Skill }) => {
   return (

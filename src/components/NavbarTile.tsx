@@ -1,10 +1,10 @@
 "use client"
 import Link from "next/link"
-import { NavData } from "./Navbar"
 import Chevron from "./Chevron"
 import NavbarSubTile from "./NavbarSubTile"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
+import { NavData } from "@/types/types"
 
 const NavbarTile = ({data}:{data:NavData}) => {
 
