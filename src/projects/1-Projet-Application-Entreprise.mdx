@@ -1,0 +1,56 @@
+---
+id: 1
+title: "Project d'Application Entreprise"
+---
+import WrappedImageWithText from '@/components/WrappedImageWithText'
+  
+  
+## Contexte
+
+Le projet consistait à la création d'un outils de suivi des stages d'observation par étudiant et par année academique, de la recherche de ceux-ci jusqu'à la signature de la convention.\
+Le but principal était de simplifier le processus de recherche et de suivi des stages, tant pour les étudiants que pour les responsables académiques, tout en centralisant les informations et en facilitant la communication entre les parties.
+
+## Fonctionnalité principales
+
+L'application se divise en plusieurs sections adaptées aux différents profils d'utilisateurs : les quidams (utilisateurs non-connectés), les étudiants, les administratifs et les professeurs. Voici les fonctionnalités clés pour chaque profil :
+#### Quidam
+    * Accès à une interface d'inscription et de connexion.
+    * Validation des informations pour créer un compte.
+
+#### Etudiant
+Une fois connecté, l'étudiant peut gérer ses contacts avec les entreprises et suivre l'évolution de sa recherche de stage :
+
+<WrappedImageWithText src="/placeholder.jpg" width="60" position="left">
+    * Accès à un tableau de bord regroupant ses contacts et informations de stage.
+    * Création de nouvelles entreprises, ajout de contacts, et modification des informations du stage.
+    * Possibilité de filtrer et de gérer les états des contacts (accepté, refusé, suspendu).
+</WrappedImageWithText>
+Exemple d'écran : Tableau de bord de l'étudiant montrant les contacts avec les entreprises.
+
+#### Administratif et Professeur
+Les membres du personnel administratif et les professeurs disposent de fonctionnalités spécifiques pour superviser les étudiants :
+
+    * Consultation des profils d'étudiants avec un accès aux détails de leurs contacts et informations de stage.
+    * Filtrage des étudiants par année académique et par statut.
+    * Gestion de la liste des entreprises, avec possibilité de blacklister celles qui ne sont pas recommandées.
+Exemple d'écran : Interface de recherche des utilisateurs pour filtrer les étudiants par année.
+
+#### Professeur
+En plus des fonctionnalités d'administration, les professeurs ont accès à des outils d'analyse et de gestion des stages :
+
+    * Un tableau de bord avec des indicateurs graphiques sur le statut des étudiants (stage trouvé ou non).
+    * Possibilité de consulter et de gérer les entreprises black-listées avec une justification pour chaque décision.
+Exemple d'écran : Tableau de bord du professeur avec diagramme des étudiants en stage.
+
+## Architecture des données
+
+Les informations sont organisées dans une base de données relationnelle qui assure la cohérence et la sécurité des données stockées. Les entités principales comprennent :
+
+    * Utilisateurs : stocke les informations de chaque utilisateur (étudiant, administratif, professeur).
+    * Entreprises : contient les informations des entreprises, avec une option de "blacklistage".
+    * Contacts : enregistre les interactions entre les étudiants et les entreprises.
+    * Stages : centralise les informations relatives aux stages validés.
+
+## Conclusion
+
+Le développement de ProStage™ représente une solution complète pour automatiser et simplifier la gestion des stages. Avec une interface intuitive et des fonctionnalités avancées, cette application facilite la coordination entre les étudiants et les enseignants, tout en offrant une vue d’ensemble efficace pour le suivi des stages académiques.
