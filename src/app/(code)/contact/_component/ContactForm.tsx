@@ -55,15 +55,15 @@ const ContactForm = () => {
                 <label className='w-[8%]' htmlFor='name'>
                     <UserIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon' />
                 </label>
-                <input {...register("name")} name='name' id='name' type="text" placeholder='Nom' className='placeholder-gray-300 bg-transparent w-full text-orTamise focus:outline-none'/>
+                <input {...register("name")} name='name' id='name' type="text" placeholder='Nom' className='placeholder-gray-400 bg-transparent w-full text-orTamise focus:outline-none'/>
             </ContactInputWrapper>
 
 
             <ContactInputWrapper className='group' errorMessage={errors.mail && errors.mail.message}>
-                <label className='w-[8%]' htmlFor='email'>
+                <label className='w-[8%]' htmlFor='mail'>
                     <MailIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon' />
                 </label>
-                <input {...register("mail")} name='mail' id='mail' type="email" placeholder='Email' className='placeholder-gray-300 bg-transparent w-full text-orTamise focus:outline-none'/>
+                <input {...register("mail")} name='mail' id='mail' type="email" placeholder='Email' className='placeholder-gray-400 bg-transparent w-full text-orTamise focus:outline-none'/>
             </ContactInputWrapper>
 
 
@@ -74,7 +74,7 @@ const ContactForm = () => {
                             <ChatBubbleIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon'/>
                         </div>
                     </label>
-                    <textarea {...register("message")} name="message" id="message" placeholder='Message' className='placeholder-gray-300 bg-grisAnthracite py-[2%] px-[4%] rounded-lg w-full h-[100%] resize-none text-orTamise focus:outline-none scrollbar-hidden min-h-40'>
+                    <textarea {...register("message")} name="message" id="message" placeholder='Message' className='placeholder-gray-400 bg-grisAnthracite py-[2%] px-[4%] rounded-lg w-full h-[100%] resize-none text-orTamise focus:outline-none scrollbar-hidden min-h-40'>
                     </textarea>
                 </div>
                 {errors.message && (<ErrorMessageWrapper message={errors.message.message}/>)}
