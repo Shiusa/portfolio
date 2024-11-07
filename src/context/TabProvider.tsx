@@ -1,6 +1,5 @@
 "use client"
 import { TabAction, TabContextType, TabType } from '@/types/types';
-import { useRouter } from 'next/navigation';
 import React, { useCallback, useContext, useReducer } from 'react'
 
 const TabContext = React.createContext<TabContextType | undefined>(undefined)
@@ -46,7 +45,6 @@ export const useTabContext = () => {
 const TabProvider = ({ children }: { children: React.ReactNode }) => {
 
     const [tabs, dispatch] = useReducer(tabReducer, [], loadInitialTabs)
-    const router = useRouter();
 
     const addTab = useCallback((title: string, path: string) => {
         dispatch({ type: 'add', payload: { title, path } });
@@ -54,9 +52,7 @@ const TabProvider = ({ children }: { children: React.ReactNode }) => {
 
     const removeTab = useCallback((id: number) => {
         dispatch({ type: 'remove', payload: { id } });
-        addTab("Accueil", "/");
-        router.push('/');
-    }, [router, addTab]);
+    }, []);
 
     return (
         <TabContext.Provider value={{ tabs, addTab, removeTab }}>

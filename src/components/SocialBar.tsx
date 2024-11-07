@@ -8,13 +8,13 @@ const SocialBar = () => {
     <div className="h-screen w-full bg-grisAnthracite">
         <ul>
             <SocialBarTileWrap path="https://github.com/Shiusa?tab=repositories">
-              <GithubIcon size={36} className="text-orTamise group-hover:text-bleuNeon" />
+              <GithubIcon size={36} className="text-orTamise group-hover:text-bleuNeon transition-colors duration-100 ease-out" />
             </SocialBarTileWrap>
             <SocialBarTileWrap path="mailto:kylenguyen60@hotmail.com">
-              <MailIcon size={30} className="text-orTamise group-hover:text-bleuNeon" />
+              <MailIcon size={30} className="text-orTamise group-hover:text-bleuNeon transition-colors duration-100 ease-out" />
             </SocialBarTileWrap>
             <SocialBarTileWrap path="https://github.com/Shiusa?tab=repositories">
-              <LinkedInIcon size={36} className="text-orTamise group-hover:text-bleuNeon p-[10%]" />
+              <LinkedInIcon size={36} className="text-orTamise group-hover:text-bleuNeon p-[10%] transition-colors duration-100 ease-out" />
             </SocialBarTileWrap>
         </ul>
     </div>

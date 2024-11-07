@@ -27,7 +27,7 @@ const ProjectCard = ({ projectData }:{ projectData:ProjectType}) => {
 
                                 <div className='pb-[8%]'>
                                     <Link href={`/projects/${projectData.id}`}>
-                                        <p className='text-bleuNeon hover:text-mauveNeon underline underline-offset-2 py-[2%] text-sm'>Lire la suite</p>
+                                        <p className='text-bleuNeon hover:text-mauveNeon underline underline-offset-2 py-[2%] text-sm transition-colors duration-100 ease-out'>Lire la suite</p>
                                     </Link>
                                 </div>
 

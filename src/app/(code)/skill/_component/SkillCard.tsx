@@ -5,7 +5,7 @@ import { Skill } from '@/types/types'
 
 const SkillCard = ({ skillData }: { skillData:Skill }) => {
   return (
-    <a href={skillData.path} target='_blank' className='flex columns-2 p-[4%] hover:bg-mauveNeon rounded-md gap-[6%] group'>
+    <a href={skillData.path} target='_blank' className='flex columns-2 p-[4%] hover:bg-mauveNeon rounded-md gap-[6%] group transition-colors duration-100 ease-in-out'>
         <div className='w-[40%] h-full flex items-center justify-center'>
             <div className='aspect-square w-[100%] flex items-center justify-center bg-blancPur rounded-lg'>
                 <div className='relative w-[80%] h-[80%] flex items-center justify-center'>

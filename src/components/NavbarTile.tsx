@@ -25,7 +25,7 @@ const NavbarTile = ({data}:{data:NavData}) => {
 
 	return (
 		<li>
-			<div className={`flex columns-2 h-8 text-base items-center ${isPathActive ? 'bg-mauveNeon':''}`}>
+			<div className={`flex columns-2 h-8 text-base items-center ${isPathActive ? 'bg-mauveNeon':''} transition-colors duration-100 ease-out`}>
 				<div className="w-[20%] h-full flex items-center justify-center">
 					{data.isSubMenu? (
 						<Chevron isPathActive={isPathActive} toggleSubMenu={toggleSubMenu} />

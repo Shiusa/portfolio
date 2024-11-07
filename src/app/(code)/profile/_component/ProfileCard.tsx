@@ -30,13 +30,13 @@ const ProfileCard = () => {
         </div>
         <div className='flex items-center justify-center gap-[8%] p-[1.5%]'>
             <a href="https://github.com/Shiusa?tab=repositories">
-                <GithubIcon size={52} className='text-bleuNeon hover:text-mauveNeon' />
+                <GithubIcon size={52} className='text-bleuNeon hover:text-mauveNeon transition-colors duration-100 ease-out' />
             </a>
             <a href="mailto:kylenguyen60@hotmail.com">
-                <MailIcon size={52} className='text-bleuNeon hover:text-mauveNeon' />
+                <MailIcon size={52} className='text-bleuNeon hover:text-mauveNeon transition-colors duration-100 ease-out' />
             </a>
             <a href="https://github.com/Shiusa?tab=repositories">
-                <LinkedInIcon size={52} className='text-bleuNeon p-[10%] hover:text-mauveNeon' />
+                <LinkedInIcon size={52} className='text-bleuNeon p-[10%] hover:text-mauveNeon transition-colors duration-100 ease-out' />
             </a>
         </div>
     </div>
