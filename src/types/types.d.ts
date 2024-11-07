@@ -34,3 +34,19 @@ export type ProjectType = {
     projectUrl: string;
     imagePath: string;
 }
+
+export type TabType = {
+    id: number;
+    title: string;
+    path: string;
+}
+
+export type TabAction = 
+  | { type: 'add'; payload: { title: string; path: string } }
+  | { type: 'remove'; payload: { id: number } };
+
+export type TabContextType = {
+    tabs: TabType[];
+    addTab: (name: string, path: string) => void;
+    removeTab: (id: number) => void;
+};

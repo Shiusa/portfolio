@@ -1,22 +1,7 @@
 "use client"
+import { TabAction, TabContextType, TabType } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useContext, useReducer } from 'react'
-
-type TabType = {
-    id: number;
-    title: string;
-    path: string;
-}
-
-type TabAction = 
-  | { type: 'add'; payload: { title: string; path: string } }
-  | { type: 'remove'; payload: { id: number } };
-
-type TabContextType = {
-    tabs: TabType[];
-    addTab: (name: string, path: string) => void;
-    removeTab: (id: number) => void;
-};
 
 const TabContext = React.createContext<TabContextType | undefined>(undefined)
 
