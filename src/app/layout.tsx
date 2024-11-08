@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
-import SocialBar from "@/components/SocialBar";
 import TabProvider from "@/context/TabProvider";
+import ToggleBtn from "@/components/ToggleBtn";
+import ToggleNavbarProvider from "@/context/ToggleNavbarProvider";
+import SideBar from "@/components/SideBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,26 +31,26 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-mauveNeonClair`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-mauveNeonClair relative`}
       >
         <TabProvider>
-          {/*h-[96%] w-full flex flex-col lg:flex-row columns-1 xl:columns-2*/}
-          <div className="h-full w-full flex flex-col lg:flex-row columns-1 md:columns-2">
-            <div className="lg:w-1/5 xl:w-[16%] 2xl:w-[14%] w-full h-full flex columns-2">
-              <div className="h-full w-[10%] lg:w-[26%] xl:w-[28%] 2xl:w-[30%] border-r-[1px] border-mauveNeonClair">
-                <SocialBar />
+          <ToggleNavbarProvider>
+            {/*h-[96%] w-full flex flex-col lg:flex-row columns-1 xl:columns-2*/}
+            <div className="h-full w-full flex flex-col lg:flex-row columns-1 lg:columns-2 overflow-hidden">
+              <SideBar />
+              {/*w-[90%]*/}
+              <div className="w-full h-screen overflow-hidden">
+                <Header />
+                {/*xl:w-[89.5%] lg:w-4/5 w-full h-full*/}
+                <main className="xl:w-full lg:w-full w-full h-full overflow-hidden">
+                  {children}
+                </main>
+                <div className="absolute bottom-8 right-8 z-30 flex items-center justify-center lg:hidden bg-bleuNeon rounded-sm full h-12 w-12">
+                  <ToggleBtn />
+                </div>
               </div>
-              <Navbar />
             </div>
-            {/*w-[90%]*/}
-            <div className="w-full h-screen overflow-hidden">
-              <Header />
-              {/*xl:w-[89.5%] lg:w-4/5 w-full h-full*/}
-              <main className="xl:w-full lg:w-full w-full h-full overflow-hidden">
-                {children}
-              </main>
-            </div>
-          </div>
+          </ToggleNavbarProvider>
         </TabProvider>
 
       </body>
