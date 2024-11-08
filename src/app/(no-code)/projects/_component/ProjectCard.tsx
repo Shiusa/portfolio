@@ -1,9 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import BlueBtn from '@/components/BlueBtn'
 import TechnoLabel from './TechnoLabel'
 import { ProjectType } from '@/types/types'
+import ReadLink from './ReadLink'
 
 const ProjectCard = ({ projectData }:{ projectData:ProjectType}) => {
   return (
@@ -26,9 +26,7 @@ const ProjectCard = ({ projectData }:{ projectData:ProjectType}) => {
                                 </div>
 
                                 <div className='pb-[8%]'>
-                                    <Link href={`/projects/${projectData.id}`}>
-                                        <p className='text-bleuNeon hover:text-mauveNeon underline underline-offset-2 py-[2%] text-sm transition-colors duration-100 ease-out'>Lire la suite</p>
-                                    </Link>
+                                    <ReadLink title={projectData.title} id={projectData.id} />
                                 </div>
 
                             </div>
