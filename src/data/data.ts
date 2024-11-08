@@ -127,7 +127,7 @@ export const navData:NavData[] = [
 		{
 			id:2,
 			name: "Portfolio",
-			path: "/portfolio"
+			path: "/"
 		}
 	  ]
     }
