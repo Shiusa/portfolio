@@ -23,10 +23,8 @@ const SkillCard = ({ skillData }: { skillData:Skill }) => {
                         src={skillData.image}
                         fill
                         className='object-contain object-center'
-                        // style={{objectFit:'contain', objectPosition:'center'}}
                     />
                 </div>
-                {/* <GithubIcon className='w-[100%] h-[100%] text-mauveNeon' /> */}
             </div>
         </div>
         <div className='text-gray-100 w-full'>

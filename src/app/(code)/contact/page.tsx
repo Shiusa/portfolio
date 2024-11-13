@@ -20,7 +20,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import ErrorMessageWrapper from '@/components/ErrorMessageWrapper'
 import { handleContactForm } from '@/actions/contactFormAction'
 import SuccessMessageWrapper from '@/components/SuccessMessageWrapper'
-// import BlueBtn from '@/components/BlueBtn'
 
 type ContactFormType = InferType<typeof contactFormSchema>;
 
@@ -30,26 +29,11 @@ const ContactForm = () => {
         resolver: yupResolver(contactFormSchema)
     })
 
-    // const form = useForm<ContactFormType>({
-    //     resolver: yupResolver(contactFormSchema),
-    //     defaultValues: {
-    //         name: "",
-    //         mail: "",
-    //         message: ""
-    //     }
-    // })
-
     const onSubmit = async (data:ContactFormType) => {
-        // console.log("client data ", data)
-        // await new Promise(resolve => setTimeout(resolve,5000))
+
         const response = await handleContactForm(data)
-        // if (response.status === "error" && response.message) {
-        //     Object.entries(response.message).forEach(([message]) => {
-        //       setError("root", { type: "server", message });
-        //     });
-        //   }
+
         if (response.status === 500 || response.status === 400 && response.message) {
-            // Utiliser setError pour afficher tous les messages d'erreurs en une seule fois
             setError("root", { type: response.type, message: response.message });
         }
         if (response.status === 200 && response.message) {
@@ -62,7 +46,7 @@ const ContactForm = () => {
 
             <ContactInputWrapper className='group' errorMessage={errors.name && errors.name.message}>
                 <label className='w-[8%]' htmlFor='name'>
-                    <UserIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon' />
+                    <UserIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon transition-colors duration-100 ease-out' />
                 </label>
                 <input {...register("name")} name='name' id='name' type="text" placeholder='Nom' className='placeholder-gray-400 bg-transparent w-full text-orTamise focus:outline-none'/>
             </ContactInputWrapper>
@@ -70,7 +54,7 @@ const ContactForm = () => {
 
             <ContactInputWrapper className='group' errorMessage={errors.mail && errors.mail.message}>
                 <label className='w-[8%]' htmlFor='mail'>
-                    <MailIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon' />
+                    <MailIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon transition-colors duration-100 ease-out' />
                 </label>
                 <input {...register("mail")} name='mail' id='mail' type="email" placeholder='Email' className='placeholder-gray-400 bg-transparent w-full text-orTamise focus:outline-none'/>
             </ContactInputWrapper>
@@ -80,7 +64,7 @@ const ContactForm = () => {
                 <div className='flex flex-col w-full bg-grisAnthracite py-[1.5%] px-[3%] rounded-lg gap-0 group'>
                     <label className='w-full' htmlFor='message'>
                         <div className='w-[8%]'>
-                            <ChatBubbleIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon'/>
+                            <ChatBubbleIcon size={28} className='text-mauveNeon group-focus-within:text-bleuNeon transition-colors duration-100 ease-out'/>
                         </div>
                     </label>
                     <textarea {...register("message")} name="message" id="message" placeholder='Message' className='placeholder-gray-400 bg-grisAnthracite py-[2%] px-[4%] rounded-lg w-full h-[100%] resize-none text-orTamise focus:outline-none scrollbar-hidden min-h-40'>
@@ -91,9 +75,8 @@ const ContactForm = () => {
 
             {errors.root && errors.root.type==="error" && (<ErrorMessageWrapper message={errors.root.message}/>)}
             {errors.root && errors.root.type==="success" && (<SuccessMessageWrapper message={errors.root.message}/>)}
-            <button type='submit' className={\`bg-bleuNeon hover:bg-mauveNeon text-center flex justify-center items-center p-[4%] text-grisAnthracite hover:text-gray-100 rounded-md min-w-30 w-40 max-h-12\`} disabled={isSubmitting}>{isSubmitting? "Envoi en cours": "Envoyer"}</button>
-            {/* <BlueBtn path='/' innerName='Envoyer'/> */}
-            {/* <input type="submit" /> */}
+            <button type='submit' className={\`bg-bleuNeon hover:bg-mauveNeon text-center flex justify-center items-center p-[4%] text-grisAnthracite hover:text-gray-100 rounded-md min-w-30 w-40 max-h-12 transition-colors duration-100 ease-out\`} disabled={isSubmitting}>{isSubmitting? "Envoi en cours": "Envoyer"}</button>
+
         </form>
     )
 }
