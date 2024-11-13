@@ -16,14 +16,16 @@ const WrappedImageWithText = ({ src, alt, position, width, children }: WrappedIm
       <div className={`flex gap-[4%] ${direction} items-center`}>
         {/* <div className='flex flex-col'>
         </div> */}
-        {children}
+        <div className='w-[40%]'>
+          {children}
+        </div>
         <div className={`flex w-[${width}%]`}>
           <Image
             src={src}
             alt={alt? alt : ""}
             width={1920}
             height={1080}
-            className={`object-contain object-center rounded-md border-[2px] border-orTamise`}
+            className={`object-contain object-center rounded-md border-[2px] border-orTamise m-0 mb-4`}
             // fill
           />
         </div>

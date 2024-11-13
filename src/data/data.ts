@@ -31,9 +31,13 @@ export const projectData:ProjectType[] = [
           id: 6,
           name: "PostgreSQL"
         },
+        {
+          id: 7,
+          name: "Bootstrap"
+        },
       ],
       projectUrl: "https://github.com/Shiusa/portfolio",
-      imagePath: "/placeholder.jpg"
+      imagePath: "/1-thumbnail.png"
     },
     {
       id: 2,

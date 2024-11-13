@@ -8,6 +8,8 @@ import { ProjectType } from '@/types/types'
 import TechnoLabel from '../_component/TechnoLabel'
 // import { serialize } from 'next-mdx-remote/serialize'
 import WrappedImageWithText from '@/components/WrappedImageWithText'
+import WrappedImageDouble from '@/components/WrappedImageDouble'
+import WrappedImageSingle from '@/components/WrappedImageSingle'
 
 type Params = Promise<{
   id: string
@@ -42,12 +44,14 @@ const ProjectPage = async(props : { params: Params }) => {
       parseFrontmatter: true
     },
     components: {
-      WrappedImageWithText
+      WrappedImageWithText,
+      WrappedImageDouble,
+      WrappedImageSingle
     }
   })
 
   return (
-    <div className='py-[8%] prose prose-headings:text-mauveNeon prose-headings:text-balance prose-h1:text-center prose-ul:leading-6 max-w-[70%] text-gray-100 overflow-y-scroll scrollbar-hidden flex flex-col prose-h1:text-orTamise'>
+    <div className='py-[8%] prose prose-headings:text-mauveNeon prose-headings:text-balance prose-h1:text-center prose-ul:leading-6 prose-strong:text-mauveNeon max-w-[70%] text-gray-100 overflow-y-scroll scrollbar-hidden flex flex-col prose-h1:text-orTamise'>
       {/* <h1>Project {id}</h1> */}
       <h1 className='text-center leading-10'>{project.title}</h1>
       <div className='flex gap-1 flex-wrap pt-[8%] pb-[2%]'>

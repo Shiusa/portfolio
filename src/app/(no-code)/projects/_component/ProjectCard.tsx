@@ -47,7 +47,7 @@ const ProjectCard = ({ projectData }:{ projectData:ProjectType}) => {
                 {/* doublure image, absolute shenanigan */}
                 <div className='bg-bleuAcier w-full h-full relative rounded-lg border-[2px] border-orTamise'>
                     <div className='w-full h-full static'>
-                        <Image src="/placeholder.jpg" alt='placeholder' fill className='rounded-md'/>
+                        <Image src={projectData.imagePath} alt={projectData.title} fill className='rounded-md'/>
                         {/* h-[10%] w-[20%] */}
                         <BlueBtn innerName='Voir le projet' path={projectData.projectUrl} className='absolute bottom-[4%] left-[3%]' target='_blank'/>
                         {/* <div className='absolute'>

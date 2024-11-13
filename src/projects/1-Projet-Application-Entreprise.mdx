@@ -3,54 +3,126 @@ id: 1
 title: "Project d'Application Entreprise"
 ---
 import WrappedImageWithText from '@/components/WrappedImageWithText'
+import WrappedImageDouble from '@/components/WrappedImageDouble'
+import WrappedImageSingle from '@/components/WrappedImageSingle'
   
-  
+## Introduction
+
+Le PAE était un projet scolaire de groupe ayant pour objectif de simuler un environnement de travail similaire à celui d'une entreprise.\
+L'aspect front-end était un plus côté client mais c'était le respect de l'**architecture** qui était fondamentale dans la cotation de ce projet et tout les membres du groupe devait toucher à toutes les couches.\
+J'ai participé au développement de tous les cas d'utilisation (UC) au moins une fois, à travers l'ensemble des couches de l'application ainsi qu'une majorité du front-end.
+
 ## Contexte
 
-Le projet consistait à la création d'un outils de suivi des stages d'observation par étudiant et par année academique, de la recherche de ceux-ci jusqu'à la signature de la convention.\
+Le projet consistait en la création d'un outils de suivi des stages d'observation par étudiant et par année academique, de la recherche de ceux-ci jusqu'à la signature de la convention.\
 Le but principal était de simplifier le processus de recherche et de suivi des stages, tant pour les étudiants que pour les responsables académiques, tout en centralisant les informations et en facilitant la communication entre les parties.
 
 ## Fonctionnalité principales
 
 L'application se divise en plusieurs sections adaptées aux différents profils d'utilisateurs : les quidams (utilisateurs non-connectés), les étudiants, les administratifs et les professeurs. Voici les fonctionnalités clés pour chaque profil :
 #### Quidam
+Le quidam arrive directement sur une interface qui lui donne le choix entre se connecter ou s'inscrire.
+<WrappedImageSingle src="/0-inscription.gif" width="80" />
+<WrappedImageWithText src="/1-connexion.png" width="60" position="left">
     * Accès à une interface d'inscription et de connexion.
-    * Validation des informations pour créer un compte.
+    * Validation des informations pour se connecter ou créer un compte.
+</WrappedImageWithText>
+Lors de l'inscription, le choix du role se fait selon le type d'adresse email.
+<WrappedImageDouble src1="/2-inscription-etudiant.png" src2="/3-inscription-prof.png" desc1="Etudiant" desc2="Professeur Administratif" className="mt-0 mb-8"/>
+Un email étudiant attribue par défaut le rôle d'Etudiant, autrement l'utilisateur peut choisir entre Professeur ou Administratif.\
+Lors de la création d'un utilisateur, l'**année académique** est calculé en fonction du mois.
+Une inscription de septembre à décembre prendra l'année en cours et l'année suivante comme année académique.
+Sinon ce sera l'année précédente et l'année en cours comme année académique.
 
 #### Etudiant
-Une fois connecté, l'étudiant peut gérer ses contacts avec les entreprises et suivre l'évolution de sa recherche de stage :
+Une fois connecté, l'étudiant accède à son tableau de bord où il peut gérer ses contacts avec les entreprises et suivre l'évolution de sa recherche de stage :
 
-<WrappedImageWithText src="/placeholder.jpg" width="60" position="left">
+<WrappedImageWithText src="/4-tableau-de-bord.gif" width="60" position="left">
     * Accès à un tableau de bord regroupant ses contacts et informations de stage.
     * Création de nouvelles entreprises, ajout de contacts, et modification des informations du stage.
-    * Possibilité de filtrer et de gérer les états des contacts (accepté, refusé, suspendu).
+    * Possibilité de gérer les états des contacts.
 </WrappedImageWithText>
-Exemple d'écran : Tableau de bord de l'étudiant montrant les contacts avec les entreprises.
+
+<WrappedImageWithText src="/5-entreprise.gif" width="60" position="right">
+    L'ajout d'une entreprise se fait dans l'onglet _**Prendre contact**_ qui affiche la liste de toutes les entreprises.\
+    L'étudiant peut filtrer les entreprises à l'aide de la barre de recherche.\
+    Dans le cas d'entreprise ayant plusieurs branche, on peut leur ajouter un alias
+</WrappedImageWithText>
+
+<WrappedImageWithText src="/6-initier.gif" width="60" position="left">
+    Initier un contact se fait dans l'onglet _**Prendre contact**_.\
+    Une entreprise **blacklisté** sera affiché mais aura sont bouton _**initié**_ grisé et désactivé.\
+    Lorsqu'un contact est initié, l'étudiant est redirigé vers son tableau de bord où il retrouvera le contact nouvellement **initié**.
+</WrappedImageWithText>
+
+<WrappedImageWithText src="/7-pris.gif" width="60" position="right">
+    Le gestion des états d'un contact se fait dans le tableau de bord.\
+    Un contact **initié** peut ensuite soit être **pris** indiquant que le contact a été confirmé avec l'entreprise contrairement à l'état **initié** indiquant seulement la volonté.\
+    L'étudiant doit indiquer si le contact a été pris **Dans l'entreprise** ou **A Distance**.
+</WrappedImageWithText>
+
+<WrappedImageWithText src="/8-refus.gif" width="60" position="left">
+    Lorsqu'un contact **pris** est **réfusé**, l'étudiant doit indiquer la **raison du refus** par l'entreprise.
+</WrappedImageWithText>
+
+<WrappedImageWithText src="/9-non-suivi.gif" width="60" position="right">
+    L'étudiant peut à tout moment **ne plus suivre** un contact tant que celui ci n'est pas **accepté**, **suspendu** ou **refusé**.
+</WrappedImageWithText>
+
+<WrappedImageWithText src="/10-accepte.gif" width="60" position="left">
+    Un contact **accepté** mettra tout les autres contact **initié**, **pris** de l'étudiant à **suspendu**.\
+    L'étudiant est ensuite rédirigé vers un écran pour ajouter les informations de son stage. Il peut selectionner un **responsable** déjà encodé ou en rajouter un nouveau avec le formulaire adjacent qui l'ajoutera directement à la liste des **responsables**.\
+    Un contact peut également être **suspendu** si une entreprise accepte un **autre étudiant**, mettant ainsi toutes ses autres demandes en suspension.
+</WrappedImageWithText>
 
 #### Administratif et Professeur
-Les membres du personnel administratif et les professeurs disposent de fonctionnalités spécifiques pour superviser les étudiants :
+Les membres du personnel administratif et les professeurs accèdent à leur tableau de bord (différents de celui des étudiants) une fois connecté et disposent de fonctionnalités spécifiques pour superviser les étudiants :
+
+<WrappedImageSingle src="/11-tableau-prof.gif" width="80" />
+
 
     * Consultation des profils d'étudiants avec un accès aux détails de leurs contacts et informations de stage.
     * Filtrage des étudiants par année académique et par statut.
     * Gestion de la liste des entreprises, avec possibilité de blacklister celles qui ne sont pas recommandées.
-Exemple d'écran : Interface de recherche des utilisateurs pour filtrer les étudiants par année.
-
-#### Professeur
-En plus des fonctionnalités d'administration, les professeurs ont accès à des outils d'analyse et de gestion des stages :
-
     * Un tableau de bord avec des indicateurs graphiques sur le statut des étudiants (stage trouvé ou non).
     * Possibilité de consulter et de gérer les entreprises black-listées avec une justification pour chaque décision.
-Exemple d'écran : Tableau de bord du professeur avec diagramme des étudiants en stage.
 
-## Architecture des données
+<WrappedImageWithText src="/12-graph.gif" width="60" position="left">
+    Par défaut, le graphique affiché est celui de l'année courante tandis que toutes les entreprises sont affiché.\
+    Le selecteur permet de modifier le graphique ainsi que la liste des entreprises affiché,
+    seul les entreprises ayant accepté un stage pour l'année selectionné sont affiché.\
+    Le graphique correspond à la proportions entre le total des étudiants de l'année courant (étudiant ayant au moins un **contact**) et ceux qui ont trouvé un stage.
+</WrappedImageWithText>
 
-Les informations sont organisées dans une base de données relationnelle qui assure la cohérence et la sécurité des données stockées. Les entités principales comprennent :
+<WrappedImageWithText src="/13-tri.gif" width="60" position="right">
+    Il est possible de trier chaque de colonne via son en-tête, et d'accéder à tout les contacts (toutes années confondu) d'une entreprise.
+</WrappedImageWithText>
 
-    * Utilisateurs : stocke les informations de chaque utilisateur (étudiant, administratif, professeur).
-    * Entreprises : contient les informations des entreprises, avec une option de "blacklistage".
-    * Contacts : enregistre les interactions entre les étudiants et les entreprises.
-    * Stages : centralise les informations relatives aux stages validés.
+<WrappedImageWithText src="/14-blacklist.gif" width="60" position="left">
+    En accédant à la fiche d'une entreprise, le **professeur** peut la **blacklister** en indiquant la motivation de cette décision.\
+    Un **administratif** n'aura pas accès au bouton pour **blacklister**.
+</WrappedImageWithText>
 
-## Conclusion
+<WrappedImageSingle src="/15-liste.gif" width="80" desc="Affichage des contacts de chaque entreprises" />
 
-Le développement de ProStage™ représente une solution complète pour automatiser et simplifier la gestion des stages. Avec une interface intuitive et des fonctionnalités avancées, cette application facilite la coordination entre les étudiants et les enseignants, tout en offrant une vue d’ensemble efficace pour le suivi des stages académiques.
+<WrappedImageWithText src="/16-etudiant.gif" width="60" position="left">
+    L'utilisateur peut consulter les informations de l'étudiant via la même vue que ce dernier, mais sans pouvoir modifier les données.
+</WrappedImageWithText>
+
+<WrappedImageWithText src="/16-recherche.gif" width="60" position="right">
+    Par défaut, la liste des étudiants sont celle de l'année courante et les recherches s'effectuent sur tous les utilisateurs de l'année courante.\
+    Les recherche peuvent être faite sur une année académique ou toute les années et spécifié pour inclure tous les utilisateurs ou seulement les élèves.
+</WrappedImageWithText>
+
+## Architecture
+
+Architecture 3 tiers:
+    * couche **présentation**
+    * couche **business** avec des UCC (Use Case Controller)
+    * couche **data** séparé en DAO (Data Access Object) et DAL (Data Access Layer) et une DAL implémentant 2 interface différentes pour n'exposer que les preparedStatement au UCC et protéger la connection db.
+
+Les communication inter-couche se font avec des DTO (Data Transfer Object).
+
+<WrappedImageSingle src="/17-dsd.png" width="80" desc="Relations des entitées dans la db" />
+
+Etant donné que certaines entités dépendent d'autres, nous avons dû imbriquer les DTO entre eux afin d'éviter de multiples requêtes. Cette approche est permise par le fait que l'architecture n'est pas basée sur des microservices, permettant ainsi des interactions plus directes et efficaces entre les couches

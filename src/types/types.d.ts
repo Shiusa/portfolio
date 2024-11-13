@@ -23,7 +23,7 @@ export type Skill = {
 
 export type TechnologieType = {
     id: number;
-    name: "Java" | "HTML" | "CSS" | "C" | "JavaScript" | "PostgreSQL" | "Eclipse Jersey" | "Spring" | "React" | "Next JS" | "Jenkins" | "Git";
+    name: "Java" | "HTML" | "CSS" | "C" | "JavaScript" | "PostgreSQL" | "Eclipse Jersey" | "Spring" | "React" | "Next JS" | "Jenkins" | "Git" | "Bootstrap" | "Tailwind CSS";
 }
   
 export type ProjectType = {
