@@ -2,10 +2,24 @@
 import React from 'react'
 import Image from 'next/image'
 import { Skill } from '@/types/types'
+import { motion } from 'framer-motion'
 
 const SkillCard = ({ skillData }: { skillData:Skill }) => {
   return (
-    <a href={skillData.path} target='_blank' className='flex columns-2 p-[4%] hover:bg-mauveNeon rounded-md gap-[6%] group transition-colors duration-100 ease-in-out'>
+    <motion.a href={skillData.path} target='_blank' className='flex columns-2 p-[4%] hover:bg-mauveNeon rounded-md gap-[6%] group transition-colors duration-100 ease-in-out'
+        variants={{
+            hidden: {
+                opacity: 0
+            },
+            visible: {
+                opacity: 1,
+            }
+        }}
+        transition={{
+            duration: 0.5,
+            ease: 'easeOut'
+        }}
+    >
         <div className='w-[40%] h-full flex items-center justify-center'>
             <div className='aspect-square w-[100%] flex items-center justify-center bg-blancPur rounded-lg'>
                 <div className='relative w-[80%] h-[80%] flex items-center justify-center'>
@@ -26,7 +40,7 @@ const SkillCard = ({ skillData }: { skillData:Skill }) => {
                 <p className='text-sm'>{skillData.subTitle}</p>
             </div>
         </div>
-    </a>
+    </motion.a>
   )
 }
 
