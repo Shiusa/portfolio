@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image';
 import useIntersectionObserver from '@/hooks/useIntersectionOberserver';
+import { motion } from 'framer-motion'
 
 type WrappedImageSingleType = {
     src: string;
@@ -19,7 +20,17 @@ const WrappedImageSingle = ({ src, alt, desc, width }: WrappedImageSingleType) =
   const isImage = /\.(webp|gif|jpg|jpeg|png)$/i.test(src);
 
     return (
-        <div ref={containerRef} className={`flex justify-center items-center`}>
+        <motion.div ref={containerRef} className={`flex justify-center items-center`}
+			initial={{
+				opacity: 0,
+			}}
+			animate={isVisible ? {
+				opacity:1,
+				transition: {
+					duration: 0.5,
+				}
+			}:{}}
+		>
 			<div className={`flex flex-col items-center w-[${width}%]`}>
 				{
 					isVisible && (
@@ -47,7 +58,7 @@ const WrappedImageSingle = ({ src, alt, desc, width }: WrappedImageSingleType) =
 				}
 				<p className='p-0 m-0 mb-8 text-sm'>{desc}</p>
 			</div>
-        </div>
+        </motion.div>
       );
 }
 

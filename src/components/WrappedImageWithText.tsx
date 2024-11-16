@@ -2,6 +2,7 @@
 import useIntersectionObserver from '@/hooks/useIntersectionOberserver';
 import Image from 'next/image';
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type WrappedImageWithTextType = {
     src: string;
@@ -20,7 +21,17 @@ const WrappedImageWithText = ({ src, alt, position, width, children }: WrappedIm
     const isImage = /\.(webp|gif|jpg|jpeg|png)$/i.test(src);
 
     return (
-		<div ref={containerRef} className={`flex gap-[4%] ${direction} items-center`}>
+		<motion.div ref={containerRef} className={`flex gap-[4%] ${direction} items-center`}
+			initial={{
+				opacity: 0,
+			}}
+			animate={isVisible ? {
+				opacity:1,
+				transition: {
+					duration: 0.5,
+				}
+			}:{}}
+		>
 			{/* <div className='flex flex-col'>
 			</div> */}
 			<div className='w-[40%]'>
@@ -52,7 +63,7 @@ const WrappedImageWithText = ({ src, alt, position, width, children }: WrappedIm
 					)
 				}
 			</div>
-		</div>
+		</motion.div>
     );
 }
 
