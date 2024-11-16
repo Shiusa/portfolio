@@ -2,6 +2,7 @@
 import React from 'react'
 import Tab from './Tab';
 import { useTabContext } from '@/context/TabProvider';
+import { AnimatePresence } from 'framer-motion'
 
 // type tabType = {
 // 	id: number;
@@ -41,7 +42,9 @@ const Header = () => {
 				<div className='bg-roseNeon w-[20%] h-3/4 rounded-b-full'></div>
 			</div> */}
 			<div className='flex items-center w-full bg-grisAnthracite gap-[1px] max-h-[100%]'>
-				{tabs.map(tab=><Tab key={tab.id} title={tab.title} path={tab.path} onRemove={()=>removeTab(tab.id)} />)}
+				<AnimatePresence>
+					{tabs.map(tab=><Tab key={tab.id} title={tab.title} path={tab.path} onRemove={()=>removeTab(tab.id)} />)}
+				</AnimatePresence>
 			</div>
 		</header>
 	)
