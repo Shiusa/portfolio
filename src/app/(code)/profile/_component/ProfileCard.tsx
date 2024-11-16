@@ -2,6 +2,7 @@ import GithubIcon from '@/icons/GithubIcon'
 import LinkedInIcon from '@/icons/LinkedInIcon'
 import MailIcon from '@/icons/MailIcon'
 import React from 'react'
+import Ribbon from './Ribbon'
 
 const ProfileCard = () => {
   return (
@@ -11,13 +12,7 @@ const ProfileCard = () => {
                 <p className='text-mauveNeon text-2xl'>Nguyen Kyle</p>
             </div>
             <div className='w-full h-full relative'>
-                <div className='absolute bottom-[-12%] left-[-5%] w-[110%] h-[24%] bg-bleuAcier flex items-center justify-between px-[10%] rounded-b-lg border-b-[2px] border-mauveNeon gap-4'>
-                    <p className='text-orTamise text-lg uppercase tracking-tight text-balance'>Recherche d&apos;un stage</p>
-                    <div className='bg-orTamise px-[4%] py-[6%] w-[18%] rounded-b-md flex items-center justify-center'>
-                        <p className='text-bleuAcier text-center text-sm leading-3'> <span className='text-2xl font-bold'>75</span> jours</p>
-                    </div>
-                </div>
-
+                <Ribbon />
             </div>
             {/* <div className='absolute bottom-[-10%] left-[-10%] w-[120%] h-[20%] bg-bleuAcier flex items-center justify-between px-[10%] rounded-b-lg border-b-[1px] border-orTamise'>
                 <p className='text-orTamise text-lg uppercase tracking-tight'>Etudiant informatique</p>
