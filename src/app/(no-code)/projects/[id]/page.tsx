@@ -51,7 +51,7 @@ const ProjectPage = async(props : { params: Params }) => {
   })
 
   return (
-    <div className='py-[8%] prose prose-headings:text-mauveNeon prose-headings:text-balance prose-h1:text-center prose-ul:leading-6 prose-strong:text-mauveNeon max-w-[70%] text-gray-100 overflow-y-scroll scrollbar-hidden flex flex-col prose-h1:text-orTamise'>
+    <div className='py-[8%] prose prose-headings:text-mauveNeon prose-headings:text-balance prose-h1:text-center prose-ul:leading-6 prose-strong:text-mauveNeon max-w-[100%] px-[15%] text-gray-100 overflow-y-scroll scrollbar-hidden flex flex-col prose-h1:text-orTamise'>
       {/* <h1>Project {id}</h1> */}
       <h1 className='text-center leading-10'>{project.title}</h1>
       <div className='flex gap-1 flex-wrap pt-[8%] pb-[2%]'>
