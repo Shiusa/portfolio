@@ -33,7 +33,7 @@ const Header = () => {
 	const { tabs, removeTab } = useTabContext();
 
 	return (
-		<header className='h-10 lg:h-[4%] flex'>
+		<header className='sticky top-0 left-0 h-10 lg:h-[4%] w-full hidden lg:flex z-50'>
 			{/* <div className='lg:w-1/5 xl:w-[10.5%] bg-bleuAcier text-orTamise lg:flex items-center lg:justify-start pl-[4%] xl:pl-[2%] hidden'>
 				<p className='xl:text-left w-full'>Nguyen Kyle</p>
 			</div> */}
