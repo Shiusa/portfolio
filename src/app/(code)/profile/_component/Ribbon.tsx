@@ -16,7 +16,7 @@ const Ribbon = () => {
                 }
             }}
         >
-            <p className='text-orTamise text-lg uppercase tracking-tight text-balance'>Recherche d&apos;un stage</p>
+            <p className='text-orTamise text-md uppercase tracking-tight text-balance'>Recherche d&apos;un job étudiant</p>
             <motion.div className='bg-orTamise px-[4%] py-[6%] w-[18%] rounded-b-md flex items-center justify-center'
                 initial={{
                     opacity: 0,
@@ -32,7 +32,7 @@ const Ribbon = () => {
                     }
                 }}
             >
-                <p className='text-bleuAcier text-center text-sm leading-3'> <span className='text-2xl font-bold'>75</span> jours</p>
+                <p className='text-bleuAcier text-center text-sm leading-3'> <span className='text-2xl font-bold'>2</span> mois</p>
             </motion.div>
         </motion.div>
     )

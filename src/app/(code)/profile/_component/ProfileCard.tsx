@@ -32,7 +32,7 @@ const ProfileCard = () => {
             <p>
                 {`J'ai une préférence pour le backend mais je m'en sors en front aussi.`}<br />
                 {/* {`Spécialisé en développement back-end avec des compétences solides en front-end`} */}
-                Expérience avec Java, Spring, PostgreSQL, et technologies web.
+                Expérience avec Java, Swing, Spring, PostgreSQL, et technologies web.
             </p>
             <p className='leading-7'>
                 <br />

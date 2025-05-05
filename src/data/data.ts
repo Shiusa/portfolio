@@ -36,7 +36,7 @@ export const projectData:ProjectType[] = [
           name: "Bootstrap"
         },
       ],
-      projectUrl: "https://github.com/Shiusa/portfolio",
+      projectUrl: "https://github.com/Shiusa/PAE",
       imagePath: "/1-thumbnail.png"
     },
     {
@@ -195,7 +195,15 @@ export const skillList:Skill[] = [
         imgAlt: 'Logo Eclipse Jersey'
     },
     {
-        id: 8,
+      id: 8,
+      title: "Swing",
+      subTitle: "Framework",
+      path: "https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html/",
+      image: '/java-logo.png',
+      imgAlt: 'Logo Java Swing'
+    },
+    {
+        id: 9,
         title: "Spring",
         subTitle: "Framework",
         path: "https://spring.io/",
@@ -203,7 +211,7 @@ export const skillList:Skill[] = [
         imgAlt: 'Logo Spring Boot'
     },
     {
-        id: 9,
+        id: 10,
         title: "React",
         subTitle: "Framework",
         path: "https://react.dev/",
@@ -211,7 +219,7 @@ export const skillList:Skill[] = [
         imgAlt: 'Logo React'
     },
     {
-        id: 10,
+        id: 11,
         title: "Next JS",
         subTitle: "Framework",
         path: "https://nextjs.org/",
@@ -219,7 +227,7 @@ export const skillList:Skill[] = [
         imgAlt: 'Logo Next JS'
     },
     {
-        id: 11,
+        id: 12,
         title: "Jenkins",
         subTitle: "Serveur d'automatisation",
         path: "https://www.jenkins.io/",
@@ -227,7 +235,7 @@ export const skillList:Skill[] = [
         imgAlt: 'Logo Jenkins'
     },
     {
-        id: 12,
+        id: 13,
         title: "Git",
         subTitle: "Gestionnaire de version",
         path: "https://git-scm.com/",
